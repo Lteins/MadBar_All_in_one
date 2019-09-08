@@ -1,0 +1,11 @@
+#index-waterfall {
+    display: block;
+    padding-top: 25px;
+    background-color: #F2F3F4;
+}
+
+#index-nav {
+    z-index: 10; 
+    position: fixed; 
+    background-color: white;
+}
