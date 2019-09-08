@@ -1,12 +1,12 @@
 #index-waterfall {
   display: block;
-	padding-top: 25rpx;
-  background-color: #F2F3F4;
+  padding-top: 25px;
+  /*background-color: #F2F3F4;*/
 }
 
 /* nav bar */
 .nav-text{
-  font-size: 25rpx;
+  font-size: 30rpx;
   color:#ABB2B9;
 }
 
@@ -16,8 +16,13 @@
 }
 
 .nav-bar{
-  padding-left: 20rpx;
-  padding-right: 20rpx;
+  z-index: 10;
+  background-color: white;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
 }
 
 .nav-bar-scroll{
@@ -29,5 +34,52 @@
 .nav-cell{
   display:inline-block;
   padding-left: 20rpx;
-  padding-right: 20rpx;
+  padding-right: 40rpx;
+}
+
+/* SearchBar */
+.page_row{  
+  display: flex;  
+  flex-direction: row;  
+} 
+.search{
+  width: 88%;
+  margin-top: 8px;
+  margin-bottom: 12px;
+  background-color: #f0f0f0;
+  height: 36px;
+  border-radius: 10px;
+  padding-right: 6%;
+  padding-left: 8px;
+}  
+.search_arr {  
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}  
+.search_arr input{  
+  margin-left: 8px;
+  font-size: 14px;
+  height: 20px;
+  padding-top: 6px;  
+}  
+.searchcion {  
+  padding-left: 8px; 
+  padding-top: 10px;   
+}  
+.searchbox{
+  width: 100%;
+  font-weight: bold;
+}
+
+.page-content{
+  display: block;
+  margin-top: 60px;
+  padding-top: 25px;
+  background-color: white;
+}
+
+.banner{
+  width: 100%;
+  height: 140px;
 }
