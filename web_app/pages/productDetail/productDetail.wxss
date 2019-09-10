@@ -1,6 +1,6 @@
 .booth {
   background-color: #e5e5e5; 
-  height: 950rpx; 
+  height: 1150rpx; 
   width: 618rpx; 
   margin-top: 10%;
   margin-left: 50%;
@@ -27,13 +27,8 @@
   text-align: center;
 }
 
-.contact{
-  z-index: 10; 
-  position: absolute;
-  bottom: 5px; 
-  right:13px; 
-  height:250px; 
-  width:200px;
+.product-scroll-view {
+  height: 950rpx;
 }
 
 .gallery{
@@ -44,7 +39,7 @@
   flex-direction: row;
   position: relative;
   background-color: #e5e5e5;
-  height: 808rpx;
+  height: 750rpx;
   width: 618rpx;
   border-radius: 10px 10px 5px 5px; 
 }
@@ -52,7 +47,7 @@ image {
   flex-shrink: 0;
   width: 618rpx;
   max-width: 618rpx;
-  height: 100%;
+  height: 80%;
 }
 
 .foot-bar{
