@@ -6,7 +6,9 @@ Page({
   data: {
     array: util.getProductTypeArray(),
     index: 0,
-    contactURL: ""
+    contactURL: "",
+    buttonMsg: "点击查看卖家二维码",
+    toView: "productGallery"
   },
   onPullDownRefresh: function() {
     wx.stopPullDownRefresh();
@@ -88,6 +90,7 @@ Page({
       this.setData(buffer);
   },
   previewContact: function(){
+    // DEPRECATED
     util.getContactById(app.globalData.dispayedProduct.productOwner)
     .then(contactURL=>{
       console.log("ContactURL: " + contactURL);
@@ -97,6 +100,28 @@ Page({
       console.log("Successfully Preview");
       console.log(feedback);
     })})});
+  },
+  previewContactImage: function (e) {
+    var current = e.target.dataset.src;
+    wx.previewImage({
+      current: current,
+      urls: [current]
+    })
+  },
+  tap: function (e) {
+    if (this.data["buttonMsg"] === "点击查看卖家二维码") {
+      this.setData({
+        toView: "contactImage",
+        buttonMsg: "返回"
+      })
+    } else {
+      this.setData({
+        toView: "productGallery",
+        buttonMsg: "点击查看卖家二维码"
+      })
+    }
+      
+    
   },
   previewImages: function(){
     wx.previewImage({urls: this.data.imgs});
