@@ -1,10 +1,16 @@
 <view class="booth">
-    <image src="contact.png" class="contact" mode="widthFit" bindtap="previewContact"></image>
+
+    <image src="{{contactURL}}" class="contact"></image>
+
+    
+    
     <swiper class="gallery" indicator-dots="true" bindtap="previewImages">
         <swiper-item wx:for-index="idx" wx:for="{{imgs}}" wx:for-item="imgSrc"> 
             <image id= "{{'imgs[' + idx + ']'}}" src="{{imgSrc}}" mode="aspectFill" binderror="imgErr"> </image>
         </swiper-item>
     </swiper>
+  
+        
     <view class="foot-bar">
         <view class="description"> {{description}}</view>
         <view class="sub-description"> #{{array[type]}} </view>

@@ -5,7 +5,8 @@ const app = getApp();
 Page({
   data: {
     array: util.getProductTypeArray(),
-    index: 0
+    index: 0,
+    contactURL: ""
   },
   onPullDownRefresh: function() {
     wx.stopPullDownRefresh();
@@ -16,6 +17,13 @@ Page({
       console.error("productDetail页面需要一个id作为argument");
       return;
     }
+
+    util.getContactById(app.globalData.dispayedProduct.productOwner)
+      .then(contactURL => {
+        this.setData({
+          contactURL: contactURL
+        });
+    });
 
     // product info could already be present
     if (app.globalData["dispayedProduct"]
@@ -51,7 +59,6 @@ Page({
             'type': product["productType"]
           });
         }
-
         // otherwise notify user
         // TODO: use a custom image, right now the icon is a checkmark
         else {
@@ -62,6 +69,7 @@ Page({
         }
       });
     }
+
   },
   onShareAppMessage(config) {
     const ret = {
