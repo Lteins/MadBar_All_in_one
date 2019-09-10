@@ -7,7 +7,7 @@ Page({
     array: util.getProductTypeArray(),
     index: 0,
     contactURL: "",
-    buttonMsg: "点击查看卖家二维码",
+    buttonMsg: "查看卖家二维码",
     toView: "productGallery"
   },
   onPullDownRefresh: function() {
@@ -109,7 +109,7 @@ Page({
     })
   },
   tap: function (e) {
-    if (this.data["buttonMsg"] === "点击查看卖家二维码") {
+    if (this.data["buttonMsg"] === "查看卖家二维码") {
       this.setData({
         toView: "contactImage",
         buttonMsg: "返回"
@@ -117,7 +117,7 @@ Page({
     } else {
       this.setData({
         toView: "productGallery",
-        buttonMsg: "点击查看卖家二维码"
+        buttonMsg: "查看卖家二维码"
       })
     }
       
