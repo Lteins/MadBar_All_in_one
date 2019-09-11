@@ -167,3 +167,21 @@ This repository is the live version of the CUSAMNP. Files for testing purposes s
 
     - 返回参数： ErrorCode, ErrorMessage 和 ProductImages (array，里面是照片的absolute url)
 
+
+7. Banner（广告位操作）
+
+*UploadBannerImage （上传横幅）
+		- 请求参数： BannerImage （file） 待上传图片
+		- 返回参数： ErrorCode, ErrorMessage
+
+*ShowAllBannerImage (返回所有横幅)
+		- 请求参数： 无
+		- 返回参数： ErrorCode， ErrorMessage 和 BannerImages （array， 里面是每个图片的BannerImageId 和 RankId）
+		
+*SetBannerImageOrder (设置横幅顺序)
+		- 请求参数： ImageId （数组）， $RankId（数组）
+		- 返回参数： ErrorCode， ErrorMessage
+
+*DeleteBannerImageWithId （删除指定横幅）
+		- 请求参数： ImageId （指定删除的横幅）
+		- 返回参数： ErrorCode， ErrorMessage
