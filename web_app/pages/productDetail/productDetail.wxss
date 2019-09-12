@@ -106,13 +106,14 @@ image {
   color: grey;
   overflow-y: scroll;
   height: 64%;
+  padding-top: 2.5%;
   padding-left: 5%;
   padding-right: 5%;
   width: 90%;
 }
 
 .sub-description {
-  padding-bottom: 8px;
+  padding-bottom: 5%;
   padding-left: 5%;
   padding-right: 5%;
   width: 90%;
@@ -120,4 +121,8 @@ image {
 
 .jump-button {
   width: 100%;
+  border-radius: 0;
+}
+.jump-button:after {
+    border-radius: 0;
 }
