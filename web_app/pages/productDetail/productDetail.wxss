@@ -55,11 +55,10 @@ image {
   position: absolute;
   bottom: 0px;
   min-height: 122rpx; /* Real Height is 122 + 20 = 144 as there is padding */
-  width: 592rpx;
+  width: 100%;
   overflow-y: hidden;
   border-radius: 0px 0px 5px 5px;
   box-shadow: 0px 0px 10px 0px rgba(229, 229, 229, 1);
-  padding-left: 26rpx;
   color: rgba(16, 16, 16, 1);
   font-size: 26rpx;
   font-family: -apple-system;
@@ -107,11 +106,18 @@ image {
   color: grey;
   overflow-y: scroll;
   height: 64%;
-  width: 100%
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 90%;
 }
 
 .sub-description {
-  padding-top: 4px;
   padding-bottom: 8px;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 90%;
+}
+
+.jump-button {
   width: 100%;
 }

@@ -10,7 +10,7 @@
   </scroll-view>
 
   <view class="foot-bar">
-    <button size="mini" bindtap="tap">{{buttonMsg}}</button>
+    <button class="jump-button" size="mini" bindtap="tap">{{buttonMsg}}</button>
     <view class="description"> {{description}}</view>
     <view class="sub-description"> #{{array[type]}} </view>
   </view>

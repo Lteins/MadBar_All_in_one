@@ -102,10 +102,24 @@ Page({
     })})});
   },
   previewContactImage: function (e) {
-    var current = e.target.dataset.src;
-    wx.previewImage({
-      current: current,
-      urls: [current]
+    wx.showModal({
+      title: "说明",
+      content: '请长按二维码保存并手动添加卖家',
+      success: function (res) {
+        if (res.confirm) {
+          var current = e.target.dataset.src;
+          wx.previewImage({
+            current: current,
+            urls: [current]
+          })
+        } else {
+          var current = e.target.dataset.src;
+          wx.previewImage({
+            current: current,
+            urls: [current]
+          })
+        }
+      }
     })
   },
   tap: function (e) {
