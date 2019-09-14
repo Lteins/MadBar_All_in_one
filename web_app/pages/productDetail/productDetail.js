@@ -5,7 +5,10 @@ const app = getApp();
 Page({
   data: {
     array: util.getProductTypeArray(),
-    index: 0
+    index: 0,
+    contactURL: "",
+    buttonMsg: "查看卖家二维码",
+    toView: "productGallery"
   },
   onPullDownRefresh: function() {
     wx.stopPullDownRefresh();
@@ -16,6 +19,13 @@ Page({
       console.error("productDetail页面需要一个id作为argument");
       return;
     }
+
+    util.getContactById(app.globalData.dispayedProduct.productOwner)
+      .then(contactURL => {
+        this.setData({
+          contactURL: contactURL
+        });
+    });
 
     // product info could already be present
     if (app.globalData["dispayedProduct"]
@@ -51,7 +61,6 @@ Page({
             'type': product["productType"]
           });
         }
-
         // otherwise notify user
         // TODO: use a custom image, right now the icon is a checkmark
         else {
@@ -62,6 +71,7 @@ Page({
         }
       });
     }
+
   },
   onShareAppMessage(config) {
     const ret = {
@@ -80,6 +90,7 @@ Page({
       this.setData(buffer);
   },
   previewContact: function(){
+    // DEPRECATED
     util.getContactById(app.globalData.dispayedProduct.productOwner)
     .then(contactURL=>{
       console.log("ContactURL: " + contactURL);
@@ -89,6 +100,37 @@ Page({
       console.log("Successfully Preview");
       console.log(feedback);
     })})});
+  },
+  previewContactImage: function (e) {
+    wx.showModal({
+      title: "说明",
+      content: '请发送到聊天窗口再扫码',
+      success: function (res) {
+        if (res.confirm) {
+          var current = e.target.dataset.src;
+          wx.previewImage({
+            current: current,
+            urls: [current]
+          })
+        } else {
+        }
+      }
+    })
+  },
+  tap: function (e) {
+    if (this.data["buttonMsg"] === "查看卖家二维码") {
+      this.setData({
+        toView: "contactImage",
+        buttonMsg: "返回"
+      })
+    } else {
+      this.setData({
+        toView: "productGallery",
+        buttonMsg: "查看卖家二维码"
+      })
+    }
+      
+    
   },
   previewImages: function(){
     wx.previewImage({urls: this.data.imgs});

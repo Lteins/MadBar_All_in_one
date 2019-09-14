@@ -1,6 +1,6 @@
 .booth {
   background-color: #e5e5e5; 
-  height: 950rpx; 
+  height: 1150rpx; 
   width: 618rpx; 
   margin-top: 10%;
   margin-left: 50%;
@@ -27,13 +27,8 @@
   text-align: center;
 }
 
-.contact{
-  z-index: 10; 
-  position: absolute;
-  bottom: 5px; 
-  right:13px; 
-  height:50px; 
-  width:41.6px;
+.product-scroll-view {
+  height: 950rpx;
 }
 
 .gallery{
@@ -44,7 +39,7 @@
   flex-direction: row;
   position: relative;
   background-color: #e5e5e5;
-  height: 808rpx;
+  height: 750rpx;
   width: 618rpx;
   border-radius: 10px 10px 5px 5px; 
 }
@@ -53,7 +48,6 @@ image {
   width: 618rpx;
   max-width: 618rpx;
   height: 100%;
-
 }
 
 .foot-bar{
@@ -61,12 +55,10 @@ image {
   position: absolute;
   bottom: 0px;
   min-height: 122rpx; /* Real Height is 122 + 20 = 144 as there is padding */
-  width: 592rpx;
+  width: 100%;
   overflow-y: hidden;
   border-radius: 0px 0px 5px 5px;
   box-shadow: 0px 0px 10px 0px rgba(229, 229, 229, 1);
-  padding-left: 26rpx;
-  padding-top: 20rpx; 
   color: rgba(16, 16, 16, 1);
   font-size: 26rpx;
   font-family: -apple-system;
@@ -114,11 +106,23 @@ image {
   color: grey;
   overflow-y: scroll;
   height: 64%;
-  width: 74%
+  padding-top: 2.5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 90%;
 }
 
 .sub-description {
-  padding-top: 4px;
-  padding-bottom: 8px;
-  width: 74%;
+  padding-bottom: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+  width: 90%;
+}
+
+.jump-button {
+  width: 100%;
+  border-radius: 0;
+}
+.jump-button:after {
+    border-radius: 0;
 }
