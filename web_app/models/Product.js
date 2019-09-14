@@ -4,7 +4,6 @@ import util from "../lib/utility.js";
 export default class Product {
 
     constructor(json) {
-
         this.productId = json.ProductId;
         this.productName = json.ProductName;
         this.productCondition = json.ProductCondition;
