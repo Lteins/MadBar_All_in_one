@@ -58,6 +58,7 @@ function getProductById(productId) {
     "ProductId": productId
   })
   .then((res) => {
+    console.log(res);
     return res["ErrorCode"] == NO_ERROR ?
       new Product(res["Product"]) : null;
   });
