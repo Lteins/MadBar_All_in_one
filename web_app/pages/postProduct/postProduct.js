@@ -115,6 +115,11 @@ Page({
     .then(_=>this.setData({"onUploading": false}))
     .then(util.hideLoading)
     .then(_=>util.showToast(title, icon))
+    if(title === "成功") {
+      wx.switchTab({
+        url: '../index/index',
+      })
+    }
   },
   selectImage: function(){
     let that = this;
