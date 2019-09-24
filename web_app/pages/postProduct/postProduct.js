@@ -115,11 +115,20 @@ Page({
     .then(_=>this.setData({"onUploading": false}))
     .then(util.hideLoading)
     .then(_=>util.showToast(title, icon))
-    if(title === "成功") {
-      wx.switchTab({
-        url: '../index/index',
-      })
-    }
+    .then(
+      setTimeout(function () {
+        if (title === "成功") {
+          wx.switchTab({
+            url: '../index/index',
+            success: function (e) {
+              var page = getCurrentPages().pop();
+              if (page == undefined || page == null) return;
+              page.onReady();
+            }
+          })
+        }
+      }, 1300)
+    )
   },
   selectImage: function(){
     let that = this;
